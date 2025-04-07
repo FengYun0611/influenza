@@ -79,7 +79,7 @@ class Logger():
         f.close()
 
 
-def set_directories(root, model_name, sub_dirs, force=False):
+def set_directories(root, model_name, sub_dirs, force=True):
     """
     出力用のディレクトリを作成。
     同じ名前のモデルファイルがあったら止める。
@@ -102,6 +102,7 @@ def set_directories(root, model_name, sub_dirs, force=False):
         |
         |- (some models)
     """
+    force = True
     if not os.path.isdir(root):
         os.makedirs(root)
     
